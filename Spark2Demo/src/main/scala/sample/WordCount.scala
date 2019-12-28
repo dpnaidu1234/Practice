@@ -12,5 +12,6 @@ object WordCount {
     val textFile = spark.sparkContext.textFile("C:\\data\\data-master\\retail_db\\order_items")
     val counts = textFile.flatMap(line => line.split(",")).map(word => (word, 1)).reduceByKey(_ + _)
     counts.saveAsTextFile("C:\\data\\data-master\\retail_db\\order_items\\output")
+    // checking in git
   }
 }
